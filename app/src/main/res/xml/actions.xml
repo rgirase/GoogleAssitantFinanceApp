@@ -1,0 +1,19 @@
+<?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
+<actions>
+    <action intentName="actions.intent.CREATE_MONEY_TRANSFER">
+        <fulfillment urlTemplate="https://finance.net/start{?transferAmount,userName,accountName,transferType}">
+            <parameter-mapping
+                intentParameter="moneyTransfer.amount.value"
+                urlParameter="transferAmount" />
+            <parameter-mapping
+                intentParameter="moneyTransfer.moneyTransferDestination.name"
+                urlParameter="userName" />
+            <parameter-mapping
+                intentParameter="moneyTransfer.moneyTransferOrigin.name"
+                urlParameter="accountName" />
+            <parameter-mapping
+                intentParameter="moneyTransfer.transferMode"
+                urlParameter="transferType" />
+        </fulfillment>
+    </action>
+</actions>
