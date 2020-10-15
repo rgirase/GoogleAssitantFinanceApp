@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Money Exchange</string>
+    <string name="app_name">VM Transfer</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -14,10 +14,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="transfer_money_to">Transfer Money to</string>
-    <string name="amount">Amount</string>
+    <string name="amount">Transfer Amount</string>
     <string name="from_account">From Account</string>
     <string name="send">Send</string>
     <string name="cancel">Cancel</string>
     <string name="congratulations">Congratulations !!!</string>
     <string name="done">Done</string>
+    <string name="let_s_verify_it_s_you_neha">Let\'s Verify It\'s You \nNeha</string>
+    <string name="money_transfered_successfully">Money Transfered Successfully</string>
+    <string name="looks_like_phrase_doesn_t_match_please_try_again">Ooops !!! \n Looks like phrase doesn\'t match, Please try again!</string>
 </resources>

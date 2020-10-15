@@ -7,22 +7,27 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-
-private const val USER_NAME = "userName"
-private const val TRANSFER_MONEY = "transferMoney"
-private const val ACCOUNT_NAME = "accountName"
+import com.rng.googlehomebankapp.MainActivity.Companion.TRANSFER_MONEY
+import com.rng.googlehomebankapp.MainActivity.Companion.USER_NAME
 
 class SendMoneyView : Fragment() {
-    private var userName: String? = null
-    private var transferMoney: String? = null
+    private var userName: String? = "John Doe"
+    private var transferMoney: String? = "$50"
     private var accountName: String? = "Bank of America- XXXX8899"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            userName = it.getString(USER_NAME)
-            transferMoney = it.getString(TRANSFER_MONEY)
-            accountName = it.getString(ACCOUNT_NAME)
+            userName = if (it.getString(USER_NAME) == null) {
+                " John Doe"
+            } else {
+                it.getString(USER_NAME)
+            }
+            transferMoney = if (it.getString(TRANSFER_MONEY) == null) {
+                " $100"
+            } else {
+                it.getString(TRANSFER_MONEY)
+            }
         }
     }
 
@@ -42,7 +47,7 @@ class SendMoneyView : Fragment() {
         accountNameView.text = accountName
 
         sendMoneyViewButton.setOnClickListener {
-            loadCongratulationsView()
+            loadVerifyIdentityView()
         }
 
         cancelViewButton.setOnClickListener {
@@ -58,6 +63,13 @@ class SendMoneyView : Fragment() {
         }
     }
 
+    private fun loadVerifyIdentityView() {
+        val fragment = VerifyIdentityView.newInstance()
+        activity?.supportFragmentManager?.beginTransaction()!!.run {
+            replace(R.id.container, fragment)
+            commit()
+        }
+    }
 
     companion object {
         @JvmStatic

@@ -7,68 +7,79 @@
     android:background="#FFFFFF"
     tools:context=".SendMoneyView">
 
-
     <TextView
-        android:id="@+id/title"
-        android:layout_width="221dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/app_logo"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Send Money to"
+        android:textColor="#2196F3"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/personName"
+
+    <ImageView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/transfer_money_to"
-        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_account_foreground"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/personNameValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/personName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="John Doe"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/transferAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/amount"
-        android:textSize="16sp"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personName" />
+        app:layout_constraintTop_toBottomOf="@+id/personNameValue" />
 
     <TextView
         android:id="@+id/transferAmountValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/transferAmount"
-        app:layout_constraintTop_toBottomOf="@+id/personName" />
-
-    <TextView
-        android:id="@+id/transferAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/from_account"
-        android:textSize="16sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="$50"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transferAmount" />
 
@@ -76,35 +87,51 @@
         android:id="@+id/transferAccountValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/transferAccount"
-        app:layout_constraintTop_toBottomOf="@+id/transferAmount" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Bank of America- XXXX8899"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transferAmountValue" />
 
     <Button
         android:id="@+id/sendMoney"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/oval_button"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/send"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transferAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/transferAccountValue" />
 
     <Button
         android:id="@+id/cancel_action"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/oval_button"
         android:text="@string/cancel"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sendMoney"
-        app:layout_constraintTop_toBottomOf="@+id/transferAccount" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendMoney" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

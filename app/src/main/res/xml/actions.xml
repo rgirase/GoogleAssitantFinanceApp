@@ -1,19 +1,32 @@
 <?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
 <actions>
     <action intentName="actions.intent.CREATE_MONEY_TRANSFER">
-        <fulfillment urlTemplate="https://finance.net/start{?transferAmount,userName,accountName,transferType}">
+        <fulfillment urlTemplate="https://finance.net/send{?transferAmount,userName}">
             <parameter-mapping
                 intentParameter="moneyTransfer.amount.value"
                 urlParameter="transferAmount" />
             <parameter-mapping
                 intentParameter="moneyTransfer.moneyTransferDestination.name"
                 urlParameter="userName" />
-            <parameter-mapping
-                intentParameter="moneyTransfer.moneyTransferOrigin.name"
-                urlParameter="accountName" />
-            <parameter-mapping
-                intentParameter="moneyTransfer.transferMode"
-                urlParameter="transferType" />
         </fulfillment>
     </action>
+
+    <action intentName="actions.intent.OPEN_APP_FEATURE">
+        <!-- Each parameter can reference an entity set using a custom ID. -->
+        <parameter name="feature">
+            <entity-set-reference entitySetId="FeatureEntitySet" />
+        </parameter>
+
+        <fulfillment urlTemplate="https://finance.net/verify{?appFeature}">
+            <parameter-mapping
+                intentParameter="feature"
+                urlParameter="appFeature" />
+        </fulfillment>
+    </action>
+
+    <entity-set entitySetId="FeatureEntitySet">
+        <entity
+            name="Verify the user"
+            identifier="FEATUREONE" />
+    </entity-set>
 </actions>
